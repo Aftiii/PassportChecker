@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
@@ -23,9 +23,55 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="container d-flex h-100">
+        <div class="row align-self-center w-100">
+            <div class="col-6 mx-auto">
+                <div class="jumbotron data-entry">
+                    <form>
 
+                        <div class="row">
+                            <div class="col-sm-4"><img alt="Person" src="~/images/person.png" class="person-image" /></div>
 
+                            <div class="col-sm-8">
+                                <div class="form-group row">
+                                    <label for="passportnumber" class="col-sm-5 col-form-label">Passport No.</label>
+                                    <div class="col-sm-7">
+                                        <input class="form-control" id="passportnumber" type="text" />
+                                    </div>
+
+                                    <label for="nationality" class="col-sm-5 col-form-label">Nationality</label>
+                                    <div class="col-sm-7">
+                                        <input class="form-control" id="nationality" type="text" />
+                                    </div>
+
+                                    <label for="dob" class="col-sm-5 col-form-label">Date Of Birth</label>
+                                    <div class="col-sm-7">
+                                        <input class="form-control" id="dob" type="text" />
+                                    </div>
+
+                                    <label for="gender" class="col-sm-5 col-form-label">Gender</label>
+                                    <div class="col-sm-7">
+                                        <input class="form-control" id="gender" type="text" />
+                                    </div>
+
+                                    <label for="dateofexpiry" class="col-sm-5 col-form-label">Date Of Expiry</label>
+                                    <div class="col-sm-7">
+                                        <input class="form-control" id="dateofexpiry" type="text" />
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                            <div class="form-group row">
+                                <label for="mzr" class="col-sm-3 col-form-label">MZR (Line2)</label><div class="col-sm-9"><input class="form-control" id="mzr" type="text" /></div>
+                            </div>
+                        
+
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
     <environment include="Development">
@@ -40,7 +86,7 @@
                 crossorigin="anonymous"
                 integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
         </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/bootstrap.min.js"
                 asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
                 asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
                 crossorigin="anonymous"

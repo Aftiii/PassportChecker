@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassportChecker.API", "..\PassportChecker.API\PassportChecker.API.csproj", "{BB856F7D-541D-4B12-850D-11107F67E40E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassportChecker.API.Tests", "PassportChecker.API.Tests\PassportChecker.API.Tests.csproj", "{837EC1AE-8B83-4AFF-B22A-24D07627C4C6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{FD756885-648C-4619-9AA7-D0124328327B}"
@@ -21,16 +19,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassportChecker.Web.Tests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassportChecker.Web", "PassportChecker.Web\PassportChecker.Web.csproj", "{89BE2094-7366-46C6-B4DD-C1B56FF6FFD3}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PassportChecker.API", "PassportChecker.API\PassportChecker.API.csproj", "{3096523B-CCE5-4499-9609-4A99A8BE4D50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BB856F7D-541D-4B12-850D-11107F67E40E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BB856F7D-541D-4B12-850D-11107F67E40E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BB856F7D-541D-4B12-850D-11107F67E40E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BB856F7D-541D-4B12-850D-11107F67E40E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{837EC1AE-8B83-4AFF-B22A-24D07627C4C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{837EC1AE-8B83-4AFF-B22A-24D07627C4C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{837EC1AE-8B83-4AFF-B22A-24D07627C4C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,17 +47,21 @@ Global
 		{89BE2094-7366-46C6-B4DD-C1B56FF6FFD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89BE2094-7366-46C6-B4DD-C1B56FF6FFD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89BE2094-7366-46C6-B4DD-C1B56FF6FFD3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3096523B-CCE5-4499-9609-4A99A8BE4D50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3096523B-CCE5-4499-9609-4A99A8BE4D50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3096523B-CCE5-4499-9609-4A99A8BE4D50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3096523B-CCE5-4499-9609-4A99A8BE4D50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{BB856F7D-541D-4B12-850D-11107F67E40E} = {FD756885-648C-4619-9AA7-D0124328327B}
 		{837EC1AE-8B83-4AFF-B22A-24D07627C4C6} = {FD756885-648C-4619-9AA7-D0124328327B}
 		{16D5FA66-7480-4642-8F53-C40A40220C7B} = {EB67574E-D231-4063-AE92-CD869BEE600A}
 		{A69DEE8D-E851-4446-895B-EA3D57C57080} = {EB67574E-D231-4063-AE92-CD869BEE600A}
 		{BB6B24F0-5F8F-4139-8250-88D5E6EF7675} = {D2FE9D9C-41D7-4B93-AA34-F1075A0123C8}
 		{89BE2094-7366-46C6-B4DD-C1B56FF6FFD3} = {D2FE9D9C-41D7-4B93-AA34-F1075A0123C8}
+		{3096523B-CCE5-4499-9609-4A99A8BE4D50} = {FD756885-648C-4619-9AA7-D0124328327B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4ACC9555-8702-40C4-8052-F297DADFF37B}
