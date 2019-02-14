@@ -17,3 +17,6 @@ html,body{
     height:auto;
 }
 
+.master-width{
+    max-width:1300px;
+}

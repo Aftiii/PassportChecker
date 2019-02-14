@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassportChecker.API.Tests", "PassportChecker.API.Tests\PassportChecker.API.Tests.csproj", "{837EC1AE-8B83-4AFF-B22A-24D07627C4C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PassportChecker.API.Tests", "PassportChecker.API.Tests\PassportChecker.API.Tests.csproj", "{837EC1AE-8B83-4AFF-B22A-24D07627C4C6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{FD756885-648C-4619-9AA7-D0124328327B}"
 EndProject
@@ -13,11 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{D2FE9D9C-41D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassportChecker.Common", "PassportChecker.Common\PassportChecker.Common.csproj", "{16D5FA66-7480-4642-8F53-C40A40220C7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassportChecker.Common.Tests", "PassportChecker.Common.Tests\PassportChecker.Common.Tests.csproj", "{A69DEE8D-E851-4446-895B-EA3D57C57080}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PassportChecker.Common.Tests", "PassportChecker.Common.Tests\PassportChecker.Common.Tests.csproj", "{A69DEE8D-E851-4446-895B-EA3D57C57080}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassportChecker.Web.Tests", "PassportChecker.Web.Tests\PassportChecker.Web.Tests.csproj", "{BB6B24F0-5F8F-4139-8250-88D5E6EF7675}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PassportChecker.Web.Tests", "PassportChecker.Web.Tests\PassportChecker.Web.Tests.csproj", "{BB6B24F0-5F8F-4139-8250-88D5E6EF7675}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PassportChecker.Web", "PassportChecker.Web\PassportChecker.Web.csproj", "{89BE2094-7366-46C6-B4DD-C1B56FF6FFD3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PassportChecker.Web", "PassportChecker.Web\PassportChecker.Web.csproj", "{89BE2094-7366-46C6-B4DD-C1B56FF6FFD3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PassportChecker.API", "PassportChecker.API\PassportChecker.API.csproj", "{3096523B-CCE5-4499-9609-4A99A8BE4D50}"
 EndProject

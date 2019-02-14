@@ -23,7 +23,7 @@
 </head>
 <body>
 
-    <div class="container d-flex h-100">
+    <div class="container d-flex h-100 master-width">
         <div class="row align-self-center w-100">
             <div class="col-6 mx-auto">
                 <div class="jumbotron data-entry">
@@ -36,7 +36,8 @@
                                 <div class="form-group row">
                                     <label for="passportnumber" class="col-sm-5 col-form-label">Passport No.</label>
                                     <div class="col-sm-7">
-                                        <input class="form-control" id="passportnumber" type="text" />
+                                        <!--https://stackoverflow.com/a/18510925/833878-->
+                                        <input class="form-control" id="passportnumber" type="text" pattern="\d" maxlength="9" />
                                     </div>
 
                                     <label for="nationality" class="col-sm-5 col-form-label">Nationality</label>
@@ -46,17 +47,17 @@
 
                                     <label for="dob" class="col-sm-5 col-form-label">Date Of Birth</label>
                                     <div class="col-sm-7">
-                                        <input class="form-control" id="dob" type="text" />
+                                        <input class="form-control" id="dob" type="date" />
                                     </div>
 
                                     <label for="gender" class="col-sm-5 col-form-label">Gender</label>
                                     <div class="col-sm-7">
-                                        <input class="form-control" id="gender" type="text" />
+                                        <select id="genders"></select>
                                     </div>
 
                                     <label for="dateofexpiry" class="col-sm-5 col-form-label">Date Of Expiry</label>
                                     <div class="col-sm-7">
-                                        <input class="form-control" id="dateofexpiry" type="text" />
+                                        <input class="form-control" id="dateofexpiry" type="date"/>
                                     </div>
 
                                 </div>
@@ -77,6 +78,7 @@
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/utility.js" asp-append-version="true"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
     <environment exclude="Development">
@@ -92,6 +94,7 @@
                 crossorigin="anonymous"
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
+        <script src="~/js/utility.js" asp-append-version="true"></script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
 </body>

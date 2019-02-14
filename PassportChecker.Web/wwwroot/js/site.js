@@ -2,3 +2,11 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your Javascript code.
+$(document).ready(function () {
+    initGenders();
+});
+function initGenders() {
+    ajax("genders").done(function (msg) {
+        createDropDownListFromJson("genders", msg, "key", "value");
+    });
+}
