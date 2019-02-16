@@ -21,7 +21,10 @@ namespace PassportChecker.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //IoC
             services.AddScoped<IGendersService, GendersService>();
+            services.AddScoped<INationalitiesService, NationalitiesService>();
+            services.AddScoped<IPassportValidator, PassportValidatorService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

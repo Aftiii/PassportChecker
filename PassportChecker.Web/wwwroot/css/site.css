@@ -5,9 +5,7 @@ for details on configuring this project to bundle and minify static web assets. 
 .data-entry {
     background-color: #FAE4E4;
     border:2px solid #295384;
-}
-html,body{
-    height:100%;
+
 }
 .person-image
 {
@@ -15,8 +13,47 @@ html,body{
     max-height:170px;
     width:auto;
     height:auto;
+    display:inline-block;
 }
 
 .master-width{
-    max-width:1300px;
+    max-width:1000px;
+    top:25%;
+    position:absolute;
+    left:25%;
+}
+.input-width input,select{
+    width:90%;
+}
+.display-input
+{
+    float:right;
+    width:80%;
+    padding-top:2%;
+}
+.display-input div {
+    padding-bottom: 2%;
+}
+.img-alongside
+{
+    display:inline;
+    float:left;
+}
+.mzr{
+    display:inline-block
+}
+.mzr label{
+    padding-right:50px;
+    padding-left:30px;
+}
+.input-length{
+    width:700px;
+}
+.data-entry-alignment {
+
+}
+.centre-button
+{
+    margin: 0 auto;
+    display:block;
 }

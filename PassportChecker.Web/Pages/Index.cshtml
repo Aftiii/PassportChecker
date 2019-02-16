@@ -23,56 +23,51 @@
 </head>
 <body>
 
-    <div class="container d-flex h-100 master-width">
-        <div class="row align-self-center w-100">
-            <div class="col-6 mx-auto">
-                <div class="jumbotron data-entry">
+    <div class="container master-width">
+                <div class="data-entry data-entry-alignment input-width">
                     <form>
+                            <div>
+                                <img alt="Person" class="img-alongside person-image" src="~/images/person.png" />
+                            </div>
+                            <div class="form-group row display-input">
+                                <label for="passportnumber" class="col-sm-3 col-form-label">Passport No.</label>
+                                <div class="col-sm-9">
+                                    <!--https://stackoverflow.com/a/18510925/833878-->
+                                    <input class="form-control" id="passportnumber" type="text" pattern="\d" maxlength="9" />
+                                </div>
 
-                        <div class="row">
-                            <div class="col-sm-4"><img alt="Person" src="~/images/person.png" class="person-image" /></div>
+                                <label for="nationality" class="col-sm-3 col-form-label">Nationality</label>
+                                <div class="col-sm-9 display-input">
+                                    <select id="nationalities"></select>
+                                </div>
 
-                            <div class="col-sm-8">
-                                <div class="form-group row">
-                                    <label for="passportnumber" class="col-sm-5 col-form-label">Passport No.</label>
-                                    <div class="col-sm-7">
-                                        <!--https://stackoverflow.com/a/18510925/833878-->
-                                        <input class="form-control" id="passportnumber" type="text" pattern="\d" maxlength="9" />
-                                    </div>
+                                <label for="dob" class="col-sm-3 col-form-label">Date Of Birth</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" id="dob" type="date" />
+                                </div>
 
-                                    <label for="nationality" class="col-sm-5 col-form-label">Nationality</label>
-                                    <div class="col-sm-7">
-                                        <input class="form-control" id="nationality" type="text" />
-                                    </div>
+                                <label for="gender" class="col-sm-3 col-form-label">Gender</label>
+                                <div class="col-sm-9">
+                                    <select id="genders"></select>
+                                </div>
 
-                                    <label for="dob" class="col-sm-5 col-form-label">Date Of Birth</label>
-                                    <div class="col-sm-7">
-                                        <input class="form-control" id="dob" type="date" />
-                                    </div>
-
-                                    <label for="gender" class="col-sm-5 col-form-label">Gender</label>
-                                    <div class="col-sm-7">
-                                        <select id="genders"></select>
-                                    </div>
-
-                                    <label for="dateofexpiry" class="col-sm-5 col-form-label">Date Of Expiry</label>
-                                    <div class="col-sm-7">
-                                        <input class="form-control" id="dateofexpiry" type="date"/>
-                                    </div>
-
+                                <label for="dateofexpiry" class="col-sm-3 col-form-label">Date Of Expiry</label>
+                                <div class="col-sm-9">
+                                    <input class="form-control" id="dateofexpiry" type="date" />
                                 </div>
                             </div>
-                        </div>
-                        
-                            <div class="form-group row">
-                                <label for="mzr" class="col-sm-3 col-form-label">MZR (Line2)</label><div class="col-sm-9"><input class="form-control" id="mzr" type="text" /></div>
+                            <div class="mzr">
+                               
+                                <label for="mzr" class="">MZR (Line2)</label>
+                                <div class="mzr input-length">
+                                    <input style="display:inline-block" class="" id="mzr" type="text" />
+                                </div>
                             </div>
-                        
-
+                        <div>
+                            <button class="centre-button" type="submit">Validate</button>
+                        </div>
                     </form>
                 </div>
-            </div>
-        </div>
     </div>
 
     <environment include="Development">

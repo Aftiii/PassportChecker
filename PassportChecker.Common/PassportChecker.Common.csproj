@@ -43,8 +43,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\Gender.cs" />
+    <Compile Include="Enums\Nationality.cs" />
+    <Compile Include="Enums\NonDigitMapping.cs" />
+    <Compile Include="Helpers\CheckDigitHelper.cs" />
     <Compile Include="Helpers\EnumHelper.cs" />
+    <Compile Include="Models\mrzLine2.cs" />
+    <Compile Include="Models\PassportBaseData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\PassportInput.cs" />
+    <Compile Include="ViewModels\ValidationResults.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,14 +4,12 @@ using PassportChecker.API.Interfaces;
 
 namespace PassportChecker.API.Controllers
 {
-
     [Route("api/[controller]")]
-    public class GendersController : ControllerBase
+    public class NationalitiesController : ControllerBase
     {
+        private readonly INationalitiesService _service;
 
-        private readonly IGendersService _service;
-
-        public GendersController(IGendersService service)
+        public NationalitiesController(INationalitiesService service)
         {
             _service = service;
         }
