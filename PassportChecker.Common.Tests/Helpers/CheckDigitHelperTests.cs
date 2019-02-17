@@ -32,13 +32,5 @@ namespace PassportChecker.Common.Tests.Helpers
             Assert.AreEqual(expectedCheckDigit, returnedCheckDigit);
 
         }
-        [TestMethod]
-        public void CalculateCheckDigit_With_Invalid_Data_Returns_Exception()
-        {
-            string input = "5^123(()";
-
-            Assert.ThrowsException<ArgumentException>(() => CheckDigitHelper.CalculateCheckDigit(input));
-        }
-
     }
 }

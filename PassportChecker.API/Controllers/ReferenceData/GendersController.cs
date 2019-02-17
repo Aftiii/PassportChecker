@@ -6,6 +6,7 @@ namespace PassportChecker.API.Controllers
 {
 
     [Route("api/[controller]")]
+    [ApiController]
     public class GendersController : ControllerBase
     {
 

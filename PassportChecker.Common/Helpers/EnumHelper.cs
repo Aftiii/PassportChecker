@@ -21,6 +21,7 @@ namespace PassportChecker.Common.Helpers
             ?.GetCustomAttribute<DescriptionAttribute>()
             ?.Description;
         }
+
         public static List<KeyValuePair<int, string>> GetSelectList(Type enumType)
         {
             List<KeyValuePair<int, string>> genders = new List<KeyValuePair<int, string>>();

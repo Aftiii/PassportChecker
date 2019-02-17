@@ -3,7 +3,7 @@ namespace PassportChecker.Common.Enums
 {
     public enum NonDigitMapping
     {
-        lessThan = 0,
+        LessThan = 0,
         A = 10,
         B = 11,
         C = 12,

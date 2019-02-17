@@ -5,6 +5,7 @@ using PassportChecker.API.Interfaces;
 namespace PassportChecker.API.Controllers
 {
     [Route("api/[controller]")]
+    [ApiController]
     public class NationalitiesController : ControllerBase
     {
         private readonly INationalitiesService _service;

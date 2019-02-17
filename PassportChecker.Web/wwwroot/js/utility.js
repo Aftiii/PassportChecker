@@ -13,7 +13,8 @@ function ajax(service, data) {
         var request = $.get(fullUrl)
     } else {
         var request = $.ajax({
-            url: baseUrl + service,
+            contentType: "application/json",
+            url: fullUrl,
             method: "POST",
             data: JSON.stringify(data)
         });

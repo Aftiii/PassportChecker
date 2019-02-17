@@ -16,11 +16,11 @@ namespace PassportChecker.Common.Helpers
 
         public static char CalculateCheckDigit(string input)
         {
-            if (!Regex.Match(input, _pattern).Success)
+            //If the string is empty (because we've removed filler chars) then return 0, the filler char is counted as 0 so any calculations will always be 0
+            if(String.IsNullOrEmpty(input))
             {
-                throw new ArgumentException("Input is not a valid input, must be alpha numeric and could contain <", input);
+                return '0';
             }
-
             char[] inputs = input.ToCharArray();
             List<int> digitsToCalculate = new List<int>(inputs.Length);
             bool isNumeric = false;
@@ -54,7 +54,7 @@ namespace PassportChecker.Common.Helpers
                     currentWeightingPosition = 0;
                 }
             }
-
+            int total2 = total % modulus;
             return total % modulus;
         }
 

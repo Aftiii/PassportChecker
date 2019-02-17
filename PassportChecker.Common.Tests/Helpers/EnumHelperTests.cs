@@ -15,7 +15,7 @@ namespace PassportChecker.Common.Tests.Helpers
             string expectedDescription = "Female";
             string returnedDescription = "";
 
-            returnedDescription = EnumHelper.GetDescription(Gender.Female);
+            returnedDescription = EnumHelper.GetDescription(Gender.F);
 
             Assert.AreEqual(expectedDescription, returnedDescription);
         }
