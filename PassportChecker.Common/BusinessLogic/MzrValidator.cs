@@ -2,6 +2,7 @@
 using PassportChecker.Common.Models;
 using PassportChecker.Common.Helpers;
 using PassportChecker.Common.BusinessLogic.Interfaces;
+using PassportChecker.Common.Extensions;
 
 namespace PassportChecker.Common.BusinessLogic
 {
@@ -36,7 +37,7 @@ namespace PassportChecker.Common.BusinessLogic
             results.DateOfBirthCrossCheck = baseData.DateOfBirth.ToString(DateMask) == mzrLine2.DateOfBirth.ToString(DateMask) ? true : false;
             results.ExpirationDateCrossCheck = baseData.DateOfExpiry.ToString(DateMask) == mzrLine2.DateOfExpiry.ToString(DateMask) ? true : false;
             results.NationalityCrossCheck = baseData.Nationality == mzrLine2.Nationality ? true : false;
-            results.PassportNumberCrossCheck = baseData.PassportNumber == mzrLine2.PassportNumber ? true : false;
+            results.PassportNumberCrossCheck = baseData.PassportNumber.TrimFillerChars() == mzrLine2.PassportNumber ? true : false;
 
             return results;
         }

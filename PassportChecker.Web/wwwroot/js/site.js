@@ -30,9 +30,8 @@ $("#btn_validate").click(function (e) {
         });
 
     }).fail(function (xhr) {
-        $("#error").show().delay(10000).fadeOut();;
-        $("#error").text(xhr.responseJSON.Message);
-        console.log('error', xhr);
+        $("#error").show().delay(20000).fadeOut();;
+        $("#error").html(errorParser(xhr.responseJSON));
     });
     e.preventDefault();
 });
@@ -42,6 +41,17 @@ $("#btn_checkAnother").click(function () {
         $("#div_entryContainer").show(600);
     });
 })
+function errorParser(error) {
+    var text = "";
+    $.each(error, function (key, value) {
+        text += "Issue with:" + key + " <br />";
+        $.each(value, function (key, value) {
+             text += "Error:" + value + " <br />";
+        });
+        text += "<br />";
+    });
+    return text;
+}
 function populatePassFails(validatedResults) {
     populateResult("#passportNumberCheckDigit",validatedResults.passportNumberCheckDigit);
     populateResult("#dateOfBirthCheckDigit",validatedResults.dateOfBirthCheckDigit);

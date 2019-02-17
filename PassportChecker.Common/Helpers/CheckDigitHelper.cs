@@ -9,17 +9,15 @@ namespace PassportChecker.Common.Helpers
     {
         //These weightings are set by the standard, can be added or removed from here
         private static readonly int[] _weightings = new int[] { 7, 3, 1 };
-        //This is the pattern which is the current standard
-        private static readonly string _pattern = @"^([a-zA-Z0-9<]+)$";
         //The current standard for the modulus division
         private static readonly int _modulus = 10;
 
-        public static char CalculateCheckDigit(string input)
+        public static string CalculateCheckDigit(string input)
         {
             //If the string is empty (because we've removed filler chars) then return 0, the filler char is counted as 0 so any calculations will always be 0
             if(String.IsNullOrEmpty(input))
             {
-                return '0';
+                return "0";
             }
             char[] inputs = input.ToCharArray();
             List<int> digitsToCalculate = new List<int>(inputs.Length);
@@ -36,7 +34,7 @@ namespace PassportChecker.Common.Helpers
                 digitsToCalculate.Add(num);
             }
 
-            return (char)CalculateDigits(digitsToCalculate, _weightings, _modulus);
+            return CalculateDigits(digitsToCalculate, _weightings, _modulus).ToString();
         }
 
         private static int CalculateDigits(List<int> digits, int[] weightings, int modulus)

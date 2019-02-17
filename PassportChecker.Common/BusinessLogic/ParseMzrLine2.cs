@@ -30,16 +30,16 @@ namespace PassportChecker.Common.BusinessLogic
             try
             {
                 mzrLine2.PassportNumber = PassportValidatorHelper.ParseForString(rawMzr, PassportNumberLookup.Index, PassportNumberLookup.Length);
-                mzrLine2.CheckDigitPassportNumber = PassportValidatorHelper.ParseForChar(rawMzr, PassportNumberCheckDigitLookup.Index, PassportNumberCheckDigitLookup.Length);
+                mzrLine2.CheckDigitPassportNumber = PassportValidatorHelper.ParseForString(rawMzr, PassportNumberCheckDigitLookup.Index, PassportNumberCheckDigitLookup.Length);
                 mzrLine2.Nationality = (Nationality)PassportValidatorHelper.ParseForEnum(rawMzr, NationalityLookup.Index, NationalityLookup.Length, typeof(Nationality));
                 mzrLine2.DateOfBirth = PassportValidatorHelper.ParseForDateTime(rawMzr, DateofBirthLookup.Index, DateofBirthLookup.Length, DateMask);
-                mzrLine2.CheckDigitDateOfBirth = PassportValidatorHelper.ParseForChar(rawMzr, CheckDigitDateOfBirthLookup.Index, CheckDigitDateOfBirthLookup.Length);
+                mzrLine2.CheckDigitDateOfBirth = PassportValidatorHelper.ParseForString(rawMzr, CheckDigitDateOfBirthLookup.Index, CheckDigitDateOfBirthLookup.Length);
                 mzrLine2.Gender = (Gender)PassportValidatorHelper.ParseForEnum(rawMzr, GenderLookup.Index, GenderLookup.Length, typeof(Gender));
                 mzrLine2.DateOfExpiry = PassportValidatorHelper.ParseForDateTime(rawMzr, ExpiryDateLookup.Index, ExpiryDateLookup.Length, DateMask);
-                mzrLine2.CheckDigitDateOfExpiry = PassportValidatorHelper.ParseForChar(rawMzr, ExpiryCheckDigitLookup.Index, ExpiryCheckDigitLookup.Length);
+                mzrLine2.CheckDigitDateOfExpiry = PassportValidatorHelper.ParseForString(rawMzr, ExpiryCheckDigitLookup.Index, ExpiryCheckDigitLookup.Length);
                 mzrLine2.PersonalNumber = PassportValidatorHelper.ParseForString(rawMzr, PersonalNumberLookup.Index, PersonalNumberLookup.Length);
-                mzrLine2.CheckDigitPersonalNumber = PassportValidatorHelper.ParseForChar(rawMzr, PersonalNumberCheckDigitLookup.Index, PersonalNumberCheckDigitLookup.Length);
-                mzrLine2.CheckDigitOverall = PassportValidatorHelper.ParseForChar(rawMzr, CompositeCheckDigitLookup.Index, CompositeCheckDigitLookup.Length);
+                mzrLine2.CheckDigitPersonalNumber = PassportValidatorHelper.ParseForString(rawMzr, PersonalNumberCheckDigitLookup.Index, PersonalNumberCheckDigitLookup.Length);
+                mzrLine2.CheckDigitOverall = PassportValidatorHelper.ParseForString(rawMzr, CompositeCheckDigitLookup.Index, CompositeCheckDigitLookup.Length);
             }
             catch (Exception e)
             {
