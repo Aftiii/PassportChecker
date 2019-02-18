@@ -63,9 +63,11 @@ namespace PassportChecker.API.Tests.Controllers
             expectedNationalities.Add(barbados);
             expectedNationalities.Add(belarus);
 
+            //Get the OK result
             var okResult = _controller.Get().Result as OkObjectResult;
-
+            //Parse the OK result
             var returnedNationalities = Assert.IsType<List<KeyValuePair<int, string>>>(okResult.Value);
+
             Assert.Equal(expectedNationalities, returnedNationalities);
         }
     }

@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PassportChecker.API.Interfaces;
 using PassportChecker.Common.ViewModels;
 using PassportChecker.Common.Models;
-using PassportChecker.Common.BusinessLogic;
 using PassportChecker.Common.BusinessLogic.Interfaces;
 using AutoMapper;
 using System;
@@ -13,13 +11,14 @@ namespace PassportChecker.API.Controllers
     [ApiController]
     public class PassportValidator : ControllerBase
     {
-        private readonly IMzrValidator _mzrValidator;
-        private readonly IParseMzrLine2 _parseMzrLine2;
+        //Make this controller mockable
+        private readonly IMrzValidator _mrzValidator;
+        private readonly IParseMrzLine2 _parsemrzLine2;
         private readonly IMapper _mapper;
-        public PassportValidator(IParseMzrLine2 parseMzrLine2, IMzrValidator mzrValidator, IMapper mapper)
+        public PassportValidator(IParseMrzLine2 parseMrzLine2, IMrzValidator MrzValidator, IMapper mapper)
         {
-            _mzrValidator = mzrValidator;
-            _parseMzrLine2 = parseMzrLine2;
+            _mrzValidator = MrzValidator;
+            _parsemrzLine2 = parseMrzLine2;
             _mapper = mapper;
         }
 
@@ -31,13 +30,14 @@ namespace PassportChecker.API.Controllers
             
             try
             {
-                //Get the mzrline2 string into a manageable object
-                MzrLine2 mzrLine2 = _parseMzrLine2.ParseMzrLine2FromString(input.mzrLine2);
-                //Check all data on the mzrline2 and whether what the user entered matches the mzrline2
-                return _mzrValidator.ValidateMzrAndBaseData(baseData, mzrLine2);
+                //Get the Mrzline2 string into a manageable object
+                MrzLine2 mrzLine2 = _parsemrzLine2.ParseMrzLine2FromString(input.MrzLine2);
+                //Check all data on the mrzline2 and whether what the user entered matches the mrzline2
+                return _mrzValidator.ValidateMrzAndBaseData(baseData, mrzLine2);
             }
             catch(Exception e)
             {
+                //Always return a bad status code with the exception to the view
                 return BadRequest(e);
             }
         }

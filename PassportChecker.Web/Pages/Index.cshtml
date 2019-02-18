@@ -35,7 +35,7 @@
                     <label for="passportnumber" class="col-sm-3 col-form-label">Passport No.</label>
                     <div class="col-sm-9">
                         <!--https://stackoverflow.com/a/18510925/833878-->
-                        <input class="form-control" name="passportnumber" id="passportnumber" type="text" pattern="\d" maxlength="9" />
+                        <input class="form-control" name="passportnumber" id="passportnumber" type="text" pattern="\d" maxlength="9" required />
                     </div>
 
                     <label for="nationality" class="col-sm-3 col-form-label">Nationality</label>
@@ -58,11 +58,11 @@
                         <input class="form-control" id="dateofexpiry" name="dateofexpiry" type="date" />
                     </div>
                 </div>
-                <div class="mzr">
+                <div class="mrz">
 
-                    <label for="mzr" class="">MZR (Line2)</label>
-                    <div class="mzr input-length">
-                        <input style="display:inline-block" name="mzrLine2" id="mzr" type="text" />
+                    <label for="mrz" class="">mrz(Line2)</label>
+                    <div class="mrz input-length">
+                        <input style="display:inline-block" name="mrzLine2" id="mrz" type="text" />
                     </div>
                 </div>
                 <div>
@@ -125,6 +125,7 @@
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
         <script src="~/js/plugins.js" asp-append-version="true"></script>
         <script src="~/js/utility.js" asp-append-version="true"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
@@ -142,6 +143,13 @@
                 crossorigin="anonymous"
                 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
         </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"
+                asp-fallback-src="~/lib/jquery-validation/dist/jquery.validate.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-rZfj/ogBloos6wzLGpPkkOr/gpkBNLZ6b6yLy4o+ok+t/SAKlL5mvXLr0OXNi1Hp">
+        </script>
+        
         <script src="~/js/plugins.js" asp-append-version="true"></script>
         <script src="~/js/utility.js" asp-append-version="true"></script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>

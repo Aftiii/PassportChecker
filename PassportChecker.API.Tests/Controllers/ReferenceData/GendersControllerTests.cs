@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using PassportChecker.API.Controllers;
 using PassportChecker.API.Interfaces;
@@ -22,6 +20,7 @@ namespace PassportChecker.API.Tests.Controllers
         [Fact]
         public void GetSelectList_From_Genders_Returns_ListOfGenders()
         {
+            //Setup expected data
             List<KeyValuePair<int, string>> expectedGenders = new List<KeyValuePair<int, string>>();
             KeyValuePair<int, string> nonSpecified = new KeyValuePair<int, string>(1, "Non-specified");
             KeyValuePair<int, string> male = new KeyValuePair<int, string>(2, "Male");
@@ -30,9 +29,11 @@ namespace PassportChecker.API.Tests.Controllers
             expectedGenders.Add(male);
             expectedGenders.Add(female);
 
+            //Get the OK result first
             var okResult = _controller.Get().Result as OkObjectResult;
+            //Parse the OK results
+            var returnedGenders = Assert.IsType<List<KeyValuePair<int, string>>>(okResult.Value);
 
-            var returnedGenders = Assert.IsType<List<KeyValuePair<int,string>>>(okResult.Value);
             Assert.Equal(expectedGenders, returnedGenders);
         }
     }

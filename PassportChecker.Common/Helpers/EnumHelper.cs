@@ -30,7 +30,9 @@ namespace PassportChecker.Common.Helpers
                 var genderValues = Enum.GetValues(enumType);
                 foreach(int genderValue in genderValues)
                 {
+                    //Parse the enum we're currently iterating over into the enum type we've been passed
                     var member = Enum.Parse(enumType, genderValue.ToString());
+                    //Create a kvp based upon the value of the enum and the description field
                     KeyValuePair<int, string> gender = new KeyValuePair<int, string>(genderValue, GetDescription((Enum)member));
                     genders.Add(gender);
                 }

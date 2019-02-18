@@ -1,18 +1,21 @@
 ﻿function createDropDownListFromJson(listId, json, key, value) {
-    for (var i = 0; i < json.length; i++) {
+    //generic method to populate a select list from data passed in
+    json.forEach(function (element) {
         var option = document.createElement("option");
-        option.value = json[i][key];
-        option.textContent = json[i][value];
+        option.value = element[key];
+        option.textContent = element[value];
         $("#" + listId).append(option);
-    }
+    });
 }
 function ajax(service, data) {
-    var baseUrl = 'https://localhost:44398/api/';
+    //generic method to perform an async ajax request
+    var baseUrl = "https://localhost:44398/api/";
     var fullUrl = baseUrl + service;
+    var request;
     if (!data) {
-        var request = $.get(fullUrl)
+        request = $.get(fullUrl);
     } else {
-        var request = $.ajax({
+        request = $.ajax({
             contentType: "application/json",
             url: fullUrl,
             method: "POST",
@@ -20,5 +23,6 @@ function ajax(service, data) {
         });
 
     }
+    //return a promise for methods to pend on the async request.
     return request;
 }

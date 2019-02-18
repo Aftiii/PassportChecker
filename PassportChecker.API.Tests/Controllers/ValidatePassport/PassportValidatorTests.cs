@@ -25,15 +25,15 @@ namespace PassportChecker.API.Tests.Controllers.ValidatePassport
         [Fact]
         public void Validate_Valid_Passport_Returns_Validated_Results()
         {
-            var mockMzrParse = new Mock<IParseMzrLine2>();
-            var mockMzrValidator = new Mock<IMzrValidator>();
+            var mockMrzParse = new Mock<IParseMrzLine2>();
+            var mockMrzValidator = new Mock<IMrzValidator>();
             //We need to mock the IMapper, use the existing profile and pass this in
             var mockMapper = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile(new MappingProfile());
             });
             var mapper = mockMapper.CreateMapper();
-            PassportValidator controller = new PassportValidator(mockMzrParse.Object, mockMzrValidator.Object, mapper);
+            PassportValidator controller = new PassportValidator(mockMrzParse.Object, mockMrzValidator.Object, mapper);
 
             PassportInput passportInput = new PassportInput()
             {
@@ -42,21 +42,21 @@ namespace PassportChecker.API.Tests.Controllers.ValidatePassport
                 DateOfBirth = new DateTime(1989, 02, 12),
                 Gender = Gender.M,
                 DateOfExpiry = new DateTime(2020, 10, 01),
-                mzrLine2 = "1122565035GBR8902122M2010016<<<<<<<<<<<<<<04"
+                MrzLine2 = "1122565035GBR8902122M2010016<<<<<<<<<<<<<<04"
             };
-            MzrLine2 fakeMzrLine2 = new MzrLine2()
+            MrzLine2 fakeMrzLine2 = new MrzLine2()
             {
                 PassportNumber = "112256503",
-                CheckDigitPassportNumber = '5',
+                CheckDigitPassportNumber = "5",
                 Nationality = Nationality.GBR,
                 DateOfBirth = new DateTime(1989,02,12),
-                CheckDigitDateOfBirth = '2',
+                CheckDigitDateOfBirth = "2",
                 Gender = Gender.M,
                 DateOfExpiry = new DateTime(2020,10,01),
-                CheckDigitDateOfExpiry = '6',
+                CheckDigitDateOfExpiry = "6",
                 PersonalNumber = "",
-                CheckDigitPersonalNumber = '0',
-                CheckDigitOverall = '4'
+                CheckDigitPersonalNumber = "0",
+                CheckDigitOverall = "4"
             };
             ValidationResults expectedValidationResults = new ValidationResults()
             {
@@ -71,8 +71,8 @@ namespace PassportChecker.API.Tests.Controllers.ValidatePassport
                 NationalityCrossCheck = true,
                 PassportNumberCrossCheck = true
             };
-            mockMzrParse.Setup(x => x.ParseMzrLine2FromString(It.IsAny<string>())).Returns(fakeMzrLine2);
-            mockMzrValidator.Setup(x => x.ValidateMzrAndBaseData(It.IsAny<PassportBaseData>(), It.IsAny<MzrLine2>())).Returns(expectedValidationResults);
+            mockMrzParse.Setup(x => x.ParseMrzLine2FromString(It.IsAny<string>())).Returns(fakeMrzLine2);
+            mockMrzValidator.Setup(x => x.ValidateMrzAndBaseData(It.IsAny<PassportBaseData>(), It.IsAny<MrzLine2>())).Returns(expectedValidationResults);
 
             ValidationResults returnedValidationResults = controller.Validate(passportInput).Value;
 

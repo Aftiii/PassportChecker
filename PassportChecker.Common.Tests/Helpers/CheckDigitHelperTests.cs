@@ -10,6 +10,7 @@ namespace PassportChecker.Common.Tests.Helpers
         [TestMethod]
         public void CalculateCheckDigit_With_Valid_Data_Returns_Valid_CheckDigit()
         {
+            //all less than's will be turned into 0s
             string input = "586479869<<<";
             /* Math below
             5 = 5 * 7 = 35
@@ -25,9 +26,9 @@ namespace PassportChecker.Common.Tests.Helpers
             0 = 0 * 3 = 0
             0 = 0 * 1 = 0
             35 + 24 + 6 + 28 + 21 + 9 + 56 + 18 + 9 + 0 + 0 + 0  = 206 % 10 = 6 */
-            int expectedCheckDigit = 6;
+            string expectedCheckDigit = "6";
 
-            int returnedCheckDigit = CheckDigitHelper.CalculateCheckDigit(input);
+            string returnedCheckDigit = CheckDigitHelper.CalculateCheckDigit(input);
 
             Assert.AreEqual(expectedCheckDigit, returnedCheckDigit);
 

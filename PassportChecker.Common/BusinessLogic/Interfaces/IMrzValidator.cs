@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace PassportChecker.Common.BusinessLogic.Interfaces
 {
-    public interface IMzrValidator
+    public interface IMrzValidator
     {
-        ValidationResults ValidateMzrAndBaseData(PassportBaseData baseData, MzrLine2 mzrLine2);
+        ValidationResults ValidateMrzAndBaseData(PassportBaseData baseData, MrzLine2 mrzLine2);
     }
 }

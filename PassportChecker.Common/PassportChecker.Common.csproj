@@ -44,10 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessLogic\Interfaces\IMzrValidator.cs" />
-    <Compile Include="BusinessLogic\Interfaces\IParseMzrLine2.cs" />
-    <Compile Include="BusinessLogic\MzrValidator.cs" />
-    <Compile Include="BusinessLogic\ParseMzrLine2.cs" />
+    <Compile Include="BusinessLogic\Interfaces\IMrzValidator.cs" />
+    <Compile Include="BusinessLogic\Interfaces\IParseMrzLine2.cs" />
+    <Compile Include="BusinessLogic\MrzValidator.cs" />
+    <Compile Include="BusinessLogic\ParseMrzLine2.cs" />
     <Compile Include="Enums\Gender.cs" />
     <Compile Include="Enums\Nationality.cs" />
     <Compile Include="Enums\NonDigitMapping.cs" />
@@ -55,9 +55,9 @@
     <Compile Include="Helpers\CheckDigitHelper.cs" />
     <Compile Include="Helpers\EnumHelper.cs" />
     <Compile Include="Helpers\PassportValidatorHelper.cs" />
-    <Compile Include="Models\MzrLine2.cs" />
+    <Compile Include="Models\MrzLine2.cs" />
     <Compile Include="Models\PassportBaseData.cs" />
-    <Compile Include="Utility\MzrLocation.cs" />
+    <Compile Include="Utility\MrzLocation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\PassportInput.cs" />
     <Compile Include="ViewModels\ValidationResults.cs" />

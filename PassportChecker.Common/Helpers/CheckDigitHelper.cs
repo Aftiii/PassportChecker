@@ -26,9 +26,11 @@ namespace PassportChecker.Common.Helpers
             foreach (char character in inputs)
             {
                 int num = 0;
+                //Let's check to see if the number we've been passed needs to be transposed from A-Z into a number
                 isNumeric = int.TryParse(character.ToString(), out num);
                 if (!isNumeric)
                 {
+                    //Get the non-digit 
                     num = GetNonDigitNumber(character);
                 }
                 digitsToCalculate.Add(num);
@@ -43,6 +45,7 @@ namespace PassportChecker.Common.Helpers
             int total = 0;
             foreach (int digit in digits)
             {
+                //Multiply the digit we're on by the current weighting
                 total += digit * weightings[currentWeightingPosition];
 
                 currentWeightingPosition++;
@@ -52,7 +55,6 @@ namespace PassportChecker.Common.Helpers
                     currentWeightingPosition = 0;
                 }
             }
-            int total2 = total % modulus;
             return total % modulus;
         }
 

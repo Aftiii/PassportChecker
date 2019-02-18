@@ -1,9 +1,9 @@
 ﻿
 namespace PassportChecker.Common
 {
-    public class MzrLocation
+    public class MrzLocation
     {
-        public MzrLocation(int index, int length)
+        public MrzLocation(int index, int length)
         {
             Index = index;
             Length = length;

@@ -11,6 +11,8 @@ namespace PassportChecker.API.Tests.FakeServices
     {
         public List<KeyValuePair<int, string>> Get()
         {
+            /*Although this is fake service, let's return the object anyway, it's in memory
+               if this was a database request then we'd look to return this as a series of elements instead of doing a round trip*/
             List<KeyValuePair<int, string>> nationalities = EnumHelper.GetSelectList(typeof(Nationality));
             //Return the first 20, we're testing the function, not the data
             return nationalities.GetRange(0, 20);
